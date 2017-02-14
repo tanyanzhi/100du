@@ -1,0 +1,7 @@
+<nav class="tab-header">
+	<a href="javascript:;" ng-repeat="pane in panes" ng-click="select(pane)">
+		{{pane.title}}
+		<span ng-class="{'triangle-down-red': pane.selected, 'triangle-down-gray': !pane.selected}"></span>
+	</a>
+</nav>
+<div ng-transclude></div>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+		<title></title>
+		<!-- build:css css/app.min.css -->
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<!-- endbuild -->
+		<style id="css">
+			
+		</style>
+	</head>
+	<body>
+		<!------------------------------------------------ header ---------------------------------------------->
+		<header class="gradient-bg">
+			<div class="city" ng-controller="CityController">
+				<span>切换城市:</span>
+				<a href="javascript:;" ng-repeat="city in cities track by $index" ng-class="{active: $index==index}" ng-click="select($index)">{{city}}</a>
+			</div>
+			<div class="join">
+				<a href="javascript:;">加盟100度</a>
+				<a href="javascript:;">店铺管理</a>
+			</div>
+		</header>
+		<!------------------------------------------------ nav ---------------------------------------------->
+		<nav class="main-nav" ng-controller="MainNavController" main-nav-rotate>
+			<section class="left">
+				<a href="javascript:;"  ng-repeat="nav in navs1" ng-class="{active: nav==curNav}" ng-click="select(nav)">{{nav}}</a>
+			</section>
+			<h1 class="logo" logo-turn>
+
+				<ul id="logoList">
+				</ul>
+
+			</h1>
+			<section class="right">
+				<a href="javascript:;"  ng-repeat="nav in navs2" ng-class="{active: nav==curNav}" ng-click="select(nav)">{{nav}}</a>
+			</section>
+		</nav>
+		<!------------------------------------------------ search ---------------------------------------------->
+		<div class="search border gradient-bg">
+			<div class="main" ng-class="{bg1: index == 0, bg2: index == 1, bg3: index == 2, bg4: index == 3,  bg5: index == 4}" ng-controller="SearchNavController">
+				<form>
+					<input type="text" value="例如：荷棠鱼坊烤鱼 或 樱花日本料理" toggle/>
+					<input type="submit" name="" id="" value="" />
+				</form>
+				<p><a href="javascript:;">金钱豹</a>、<a href="javascript:;">大江南</a>、<a href="javascript:;">湘水之珠</a>、<a href="javascript:;">德瑀楼</a>、<a href="javascript:;">荷棠鱼坊烤鱼</a>、<a href="javascript:;">SOHO尚都</a></p>
+				<nav>
+					<a href="javascript:;" ng-repeat="nav in navs" ng-class="{active: $index==index}" ng-click="select($index)">{{nav}}</a>
+				</nav>
+			</div>
+			<div class="update" vertical-scroll> 
+			</div>
+			<a href="javascript:;" class="guide"></a>
+		</div>
+		<!------------------------------------------------ content ---------------------------------------------->
+		<div class="content clear">
+			<!------------------------------------------------ main ---------------------------------------------->
+			<div class="main fl">
+				<div class="clear mb-10">
+					<!------------------------------------------------ section-1 ---------------------------------------------->
+					<section class="section-1 border fl">
+						<h2>WHAT'HOT</h2>
+						<video controls src="video/hot_video.mp4" poster="img/content/main/section_1/video.png"></video>
+						<nav>
+							<a href="javascript:;">现场实录：杭州机场国航系统崩溃</a>
+							<a href="javascript:;">网友自拍国航航班晚点后的遭遇</a>
+							<a href="javascript:;">【拍客】绝对最奢侈的航班 注意第41秒</a>
+						</nav>
+					</section>
+					<!------------------------------------------------ section-2 ---------------------------------------------->
+					<section class="section-2 fr">
+						<tab tpl="1">
+							<pane title="{name1: 'HOT SHOP', name2: '红店铺'}">
+								<ul>
+									<li class="clear">
+										<a href="javascript:;">
+											<img src="img/content/main/section_2/product_1.png"/>
+											<img src="img/common/save.png" class="save"/>
+										</a>
+										<div class="info">
+											<h3><a href="javascript:;" characters-jump id="charactersJump1">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+									<li class="clear">
+										<a href="javascript:;"><img src="img/content/main/section_2/product_1.png"/></a>
+										<div class="info">
+											<h3><a href="javascript:;" characters-jump id="charactersJump1">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+									<li class="clear">
+										<a href="javascript:;"><img src="img/content/main/section_2/product_1.png"/></a>
+										<div class="info">
+											<h3><a href="javascript:;" characters-jump  id="charactersJump1">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+								</ul>
+							</pane>
+							<pane title="{name1: 'EW SHOP', name2: '新开张'}">
+								<ul>
+									<li class="clear">
+										<a href="javascript:;">
+											<img src="img/content/main/section_2/product_2.png"/>
+											<img src="img/common/save.png" class="save"/>
+										</a>
+										<div class="info">
+											<h3><a href="javascript:;">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+									<li class="clear">
+										<a href="javascript:;"><img src="img/content/main/section_2/product_2.png"/></a>
+										<div class="info">
+											<h3><a href="javascript:;">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+									<li class="clear">
+										<a href="javascript:;"><img src="img/content/main/section_2/product_2.png"/></a>
+										<div class="info">
+											<h3><a href="javascript:;">御舟和涵珍园国际酒店</a></h3>
+											<p>区域省：朝阳/CBD</p>
+											<p>人均：180元</p>
+											<p>人气：12321</p>
+										</div>
+									</li>
+								</ul>
+							</pane>
+						</tab>
+						<a href="javascript:;" class="more"></a>
+					</section>
+				</div>
+				<!------------------------------------------------ ad ---------------------------------------------->
+				<a href="javascript:;" class="ad  mb-10">
+					<img src="img/ad/ad_1.png"/>
+				</a>
+				<div class="clear mb-10">
+					<!------------------------------------------------ section-3 ---------------------------------------------->
+					<section class="section-3 border fl" ng-controller="DayController">
+						<h2>
+							<span>LUCKY YODAY</span>
+							<strong>每日活动</strong>
+							<em>{{yd}}</em>
+						</h2>
+						<div class="topic">
+							<a href="javascript:;" class="hot-product">
+								<img src="img/content/main/section_3/hot_bg.png" class="hot-icon"/>
+								<img src="img/content/main/section_3/product_1.png" class="product"/>
+							</a>
+							<div class="info">
+								<strong class="date-1">{{m | addZero}}</strong>
+								<strong class="date-2">{{d}}</strong>
+								<h4>本日主题XXXXXXXX</h4>
+								<p>迟到的荣誉-维米尔的写实主义风俗画迟到的荣誉维米尔的写实主义风俗画迟到的荣誉</p>
+							</div>
+						</div>
+						<div class="date">
+							<h3>
+								<span>MON</span>
+								<span>TUE</span>
+								<span>WED</span>
+								<span>THU</span>
+								<span>FRI</span>
+								<span>SAT</span>
+								<span>SUN</span>
+							</h3>
+							<ul day>
+								<li class="light">29</li>
+								<li class="light">30</li>
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+								<li>6</li>
+								<li>7</li>
+								<li>8</li>
+								<li>9</li>
+								<li>10</li>
+								<li>11</li>
+								<li>12</li>
+								<li>13</li>
+								<li>14</li>
+								<li>15</li>
+								<li>16</li>
+								<li>17</li>
+								<li>18</li>
+								<li>19</li>
+								<li>20</li>
+								<li>
+									21
+									<img src="img/content/main/section_3/product_1.png" class="sm-product today"/>
+									<div class="info">
+										<img src="img/content/main/section_3/product_1.png"/>
+										<span>MON</span>
+										<strong>本日主题XXXXXXXX</strong>
+										<p>迟到的荣誉-维米尔的写实主义风俗画迟到的荣的荣誉维米尔</p>
+										<a href="javascript:;" class="go"></a>
+									</div>
+								</li>
+								<li>22</li>
+								<li>23</li>
+								<li>
+									24
+									<img src="img/content/main/section_3/product_2.png" class="sm-product"/>
+									<div class="info">
+										<img src="img/content/main/section_3/product_2.png"/>
+										<span>MON</span>
+										<strong>本日主题XXXXXXXX</strong>
+										<p>迟到的荣誉-维米尔的写实主义风俗画迟到的荣的荣誉维米尔</p>
+										<a href="javascript:;" class="go"></a>
+									</div>
+								</li>
+								<li>25</li>
+								<li>26</li>
+								<li>27</li>
+								<li>28</li>
+								<li>29</li>
+								<li>30</li>
+								<li>31</li>
+								<li class="light">1</li>
+								<li class="light">2</li>
+								<li class="light">3</li>
+								<li class="light">4</li>
+								<li class="light">5</li>
+								<li class="light">6</li>
+								<li class="light">7</li>
+								<li class="light">8</li>
+								<li class="light">9</li>
+							</ul>
+						</div>
+					</section>
+					<!------------------------------------------------ section-4 ---------------------------------------------->
+					<section class="section-4 border fr">
+						<h2>
+							<span>RECOMMEND</span>
+							<strong>精彩推荐</strong>
+						</h2>
+						<div class="recommend-img" ng-controller="RecommendController">
+							<nav class="big-img">
+								<a href="javascript:;" ng-class="{active: index == $index}" ng-repeat="img in imgs"><img ng-src="{{img}}"/></a>
+							</nav>
+							<nav class="small-img">
+								<a href="javascript:;" ng-mouseenter="mouseEnter($index)" ng-class="{active: index == $index}" ng-repeat="img in imgs"><img ng-src="{{img}}"/></a>
+							</nav>
+							<nav class="img-info">
+								<p class="active">爸爸去哪儿1</p>
+								<p>爸爸去哪儿2</p>
+								<p>爸爸去哪儿3</p>
+							</nav>
+						</div>
+						<ul class="recommend-list">
+							<li class="buy">
+								<a href="javascript;;">老店换新颜，丰泽园野田重张亮相</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="doc">
+								<a href="javascript;;">生活中哪些商品的包装有缺陷野田</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="buy">
+								<a href="javascript;;">老店换新颜，丰泽园野田重张亮相</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="doc">
+								<a href="javascript;;">生活中哪些商品的包装有缺陷野田</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="buy">
+								<a href="javascript;;">老店换新颜，丰泽园野田重张亮相</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="doc">
+								<a href="javascript;;">生活中哪些商品的包装有缺陷野田</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="buy">
+								<a href="javascript;;">老店换新颜，丰泽园野田重张亮相</a>
+								<time>08/07/22</time>
+							</li>
+							<li class="doc">
+								<a href="javascript;;">生活中哪些商品的包装有缺陷野田</a>
+								<time>08/07/22</time>
+							</li>
+						</ul>
+					</section>
+				</div>
+				<div class="clear mb-10">
+					<!------------------------------------------------ section-5 ---------------------------------------------->
+					<section class="section-5 fl">
+						<tab tpl="1">
+							<pane title="{name1:'SUBWAY', name2:'地铁交通'}">
+								<div class="wrap">
+									<tab tpl="2">
+										<pane title="1">
+											<nav class="con">
+												<img src="img/content/main/section_5/img_1.png"/>
+											</nav>
+										</pane>
+										<pane title="2">
+											<nav class="con">
+												<img src="img/content/main/section_5/img_2.png"/>
+											</nav>
+										</pane>
+										<pane title="3">
+											<nav class="con">
+												<img src="img/content/main/section_5/img_3.png"/>
+											</nav>
+										</pane>
+										<pane title="4">
+											<nav class="con">
+												<img src="img/content/main/section_5/img_4.png"/>
+											</nav>
+										</pane>
+										<pane title="5">
+											<nav class="con">
+												<img src="img/content/main/section_5/img_5.png"/>
+											</nav>
+										</pane>
+									</tab>
+								</div>
+							</pane>
+							<pane title="{name1:'MAP', name2:'生活圈'}">
+								<div class="wrap">
+									<div style="font-size: 20px;text-align: center;	padding-top: 100px;">
+										生活圈
+									</div>
+								</div>
+							</pane>
+						</tab>
+					</section>
+					<!------------------------------------------------ section-6 ---------------------------------------------->
+					<section class="section-6 border fr">
+						<h2 class="common-header-1">
+							<span>BBS</span>
+							<span>论坛</span>
+							<a href="javascript:;" class="more"></a>
+						</h2>
+						<ul ng-controller="BBSController">
+							<li ng-repeat="item in items" ng-class="{active: $index == index}" ng-mouseenter="mouseEnter($index)">
+								<strong>{{($index + 1) | addZero}}</strong>
+								<h4>{{item.title}}</h4>
+								<span>{{item.author}}</span>
+								<em>{{order[$index]}}</em>
+								<img ng-src="{{item.img}}"/>
+							</li>
+						</ul>
+					</section>
+				</div>
+				<!------------------------------------------------ ad ---------------------------------------------->
+				<a href="javascript:;" class="ad  mb-10">
+					<img src="img/ad/ad_1.png"/>
+				</a>
+				<div class="clear mb-10">
+					<!------------------------------------------------ section-7 ---------------------------------------------->
+					<section class="section-7 border fl">
+						<h2 class="common-header-1">
+							<span>LIFESTYLE ADVICE</span>
+							<span>知道分子</span>
+							<a href="javascript:;" class="more"></a>
+						</h2>
+						<tab tpl="3">
+							<pane title="'有人在问'">
+								<div class="tab-con">
+									<h4>
+										<span class="title">标题</span>
+										<span class="state">状态</span>
+									</h4>
+									<ul>
+										<li>
+											<span class="type">[<span>美食</span>]</span>
+											<a href="javascript:;">推荐几款性价比比较好的冰箱</a>
+											<strong></strong>
+										</li>
+										<li>
+											<span class="type">[<span>购物</span>]</span>
+											<a href="javascript:;">生活中哪些商品的包装有缺陷</a>
+											<strong class="star"></strong>
+										</li>
+										<li>
+											<span class="type">[<span>休闲</span>]</span>
+											<a href="javascript:;">推荐几款性价比比较好的冰箱</a>
+											<strong></strong>
+										</li>
+										<li>
+											<span class="type">[<span>美食</span>]</span>
+											<a href="javascript:;">生活中哪些商品的包装有缺陷</a>
+											<strong class="star"></strong>
+										</li>
+										<li>
+											<span class="type">[<span>购物</span>]</span>
+											<a href="javascript:;">推荐几款性价比比较好的冰箱</a>
+											<strong></strong>
+										</li>
+									</ul>
+								</div>
+							</pane>
+							<pane title="'有人知道'">
+								<div style="text-align: center; height: 170px;font-size: 20px;line-height: 170px;">
+									有人知道
+								</div>
+							</pane>
+							<pane title="'热门问题'">
+								<div style="text-align: center; height: 170px;font-size: 20px;line-height: 170px;">
+									热门问题
+								</div>
+							</pane>
+						</tab>
+						<form class="search">
+							<strong>搜搜谁知道：</strong>
+							<input type="text" placeholder="输入关键字"/>
+							<a href="javascript:;" class="go"></a>
+						</form>
+					</section>
+					<!------------------------------------------------ section-8 ---------------------------------------------->
+					<section class="section-8 border fr">
+						<h2 class="common-header-1">
+							<span>HOT</span>
+							<span>红人烧客</span>
+							<a href="javascript:;" class="more"></a>
+						</h2>
+						<ul class="imgs">
+							<li>
+								<img src="img/content/main/section_8/img_1.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_2.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li  class="large">
+								<img src="img/content/main/section_8/img_3.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_4.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_5.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_6.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_7.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_8.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_9.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_10.png"/>
+								<p>人气：1234</p>
+							</li>
+							<li>
+								<img src="img/content/main/section_8/img_11.png"/>
+								<p>人气：1234</p>
+							</li>
+						</ul>
+					</section>
+				</div>
+				<div class="clear mb-10">
+					<!------------------------------------------------ section-9 ---------------------------------------------->
+					<section class="section-9 border fl">
+						<h2 class="common-header-1">
+							<span>HELP</span>
+							<span>在线帮助</span>
+						</h2>
+						<div class="help">
+							<p>您有任何问题，都可以通过全国免费电话，或MSN在线客服与我们联系！</p>
+							<span class="phone">4006-100-516</span>
+							<span class="link">100du.com@live.cn</span>
+						</div>
+						<dl class="user-help">
+							<dt>用户帮助</dt>
+							<dd><a href="javascript:;">金币是什么</a></dd>
+							<dd><a href="javascript:;">怎么查看我的等级</a></dd>
+							<dd><a href="javascript:;">怎么赚积分</a></dd>
+						</dl>
+						<dl class="seller-help">
+							<dt>商户帮助</dt>
+							<dd><a href="javascript:;">如何成为明星商户</a></dd>
+							<dd><a href="javascript:;">邮件推广</a></dd>
+							<dd><a href="javascript:;">论坛推广方法</a></dd>
+						</dl>
+					</section>
+					<!------------------------------------------------ section-10 ---------------------------------------------->
+					<section class="section-10 border fr">
+						<h2 class="common-header-1">
+							<span>100DU IN THE MEDIA</span>
+							<span>媒体声音</span>
+							<a href="javascript:;" class="more"></a>
+						</h2>
+						<ul>
+							<li>
+								<img src="img/content/main/section_10/media_1.png"/>
+								<a href="javascript:;">日本最大的财经杂志《钻石周刊》对100度享乐网的报道</a>
+							</li>
+							<li>
+								<img src="img/content/main/section_10/media_2.png"/>
+								<a href="javascript:;">视频网站100度享乐网获网络视听许可证</a>
+							</li>
+							<li>
+								<img src="img/content/main/section_10/media_3.png"/>
+								<a href="javascript:;">互联网上的视频橱窗</a>
+							</li>
+							<li>
+								<img src="img/content/main/section_10/media_4.png"/>
+								<a href="javascript:;">享乐主义的机会</a>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<!------------------------------------------------ aside ---------------------------------------------->
+			<aside class="fr">
+				<!------------------------------------------------ section-1 ---------------------------------------------->
+				<div class="section-1 border mb-10">
+					<h3 class="gradient-bg">
+						<span>LOAD</span>
+						<span>登录</span>
+					</h3>
+					<form class="content">
+						<p>
+							<span class="username">用户名：</span>
+							<input type="text"/>
+							<input type="checkbox"/>
+							<span class="remember">记住我</span>
+						</p>
+						<p>
+							<span class="password">密&nbsp;&nbsp;&nbsp;码：</span>
+							<input type="text"/>
+							<button>登录</button>
+						</p>
+					</form>
+					<a href="javascript:;" class="new-reg">新用户注册</a>
+					<a href="javascript:;" class="forget">忘记密码</a>
+				</div>
+				<!------------------------------------------------ ad-1 ---------------------------------------------->
+				<a href="javascript:;" class="ad-1 mb-10">
+					<img src="img/content/aside/ad/ad_1.png"/>
+				</a>
+				<!------------------------------------------------ ad-2 ---------------------------------------------->
+				<a href="javascript:;" class="ad-2 mb-10">
+					<img src="img/content/aside/ad/ad_2.png"/>
+				</a>
+				<!------------------------------------------------ section-2 ---------------------------------------------->
+				<section class="section-2 border mb-10">
+					<h2 class="common-header-1">
+						<span>HOT</span>
+						<span>红人烧客</span>
+						<a href="javascript:;" class="more"></a>
+					</h2>
+					<tab tpl="3">
+						<pane title="'人气'">
+							<div class="tab-con">
+								<h4>
+									<span class="name">商店名</span>
+									<span class="save">省</span>
+									<span class="print">打印</span>
+								</h4>
+								<ul>
+									<li>
+										<a href="javascript:;" class="name">老北京一尊皇牛</a>
+										<span class="save">12%</span>
+										<strong class="print">345</strong>
+									</li>
+									<li>
+										<a href="javascript:;" class="name">老北京一尊皇牛</a>
+										<span class="save">12%</span>
+										<strong class="print">345</strong>
+									</li>
+									<li>
+										<a href="javascript:;" class="name">老北京一尊皇牛</a>
+										<span class="save">12%</span>
+										<strong class="print">345</strong>
+									</li>
+									<li>
+										<a href="javascript:;" class="name">老北京一尊皇牛</a>
+										<span class="save">12%</span>
+										<strong class="print">345</strong>
+									</li>
+									<li>
+										<a href="javascript:;" class="name">老北京一尊皇牛</a>
+										<span class="save">12%</span>
+										<strong class="print">345</strong>
+									</li>
+								</ul>
+							</div>
+						</pane>
+						<pane title="'推荐'">
+							<div style="text-align: center; height: 170px;font-size: 20px;line-height: 170px;">
+								推荐
+							</div>
+						</pane>
+						<pane title="'最新'">
+							<div style="text-align: center; height: 170px;font-size: 20px;line-height: 170px;">
+								最新
+							</div>
+						</pane>
+					</tab>
+				</section>
+				<!------------------------------------------------ section-3 ---------------------------------------------->
+				<section class="section-3 border mb-10">
+					<h2 class="common-header-1">
+						<span>SHOP</span>
+						<span>今日推荐</span>
+						<a href="javascript:;" class="more"></a>
+					</h2>
+					<ul>
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<!------------------------------------------------ section-4 ---------------------------------------------->
+				<section class="section-4 border mb-10">
+					<h2 class="common-header-1">
+						<span>360<em>。</em> SHOP</span>
+						<span>全景逛店</span>
+						<a href="javascript:;" class="more"></a>
+					</h2>
+					<a href="javascript:;">
+						<img src="img/content/aside/section_4/img_1.png"/>
+					</a>
+					<p>苹果雪梨排骨汤</p>
+				</section>
+				<!------------------------------------------------ section-5 ---------------------------------------------->
+				<section class="section-5 border mb-10">
+					<h2 class="common-header-1">
+						<span>SHOP</span>
+						<span>今日推荐</span>
+						<a href="javascript:;" class="more"></a>
+					</h2>
+					<div class="common-img-info-1">
+						<a href="javascript:;" class="img">
+							<img src="img/content/aside/section_3/pic1.gif"/>
+							<img src="img/common/save.png" class="save"/>
+						</a>
+						<div class="info">
+							<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+							<p><span>口味：</span>创意中餐</p>
+							<p><span>区域：</span>朝阳/CBD</p>
+						</div>
+					</div>
+					<ul class="common-list-1">
+						<li>
+							<span class="type"><span>[</span>休闲<span>]</span></span>
+							<a href="javascript:;">瀚茶缘（雍和宫店）</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>休闲<span>]</span></span>
+							<a href="javascript:;">瀚茶缘（雍和宫店）</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>美食<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>美食<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+					</ul>
+				</section>
+				<!------------------------------------------------ section-6 ---------------------------------------------->
+				<section class="section-6 border mb-10">
+					<h2 class="common-header-1">
+						<span>COUPONS</span>
+						<span>最新加盟</span>
+						<a href="javascript:;" class="more"></a>
+					</h2>
+					<ul class="img-info">
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+						<li class="common-img-info-1">
+							<a href="javascript:;" class="img">
+								<img src="img/content/aside/section_3/pic1.gif"/>
+								<img src="img/common/save.png" class="save"/>
+							</a>
+							<div class="info">
+								<a href="javascript:;" class="title">汉莱国际美食百汇</a>
+								<p><span>口味：</span>创意中餐</p>
+								<p><span>区域：</span>朝阳/CBD</p>
+							</div>
+						</li>
+					</ul>
+					<ul class="common-list-1">
+						<li>
+							<span class="type"><span>[</span>休闲<span>]</span></span>
+							<a href="javascript:;">瀚茶缘（雍和宫店）</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>休闲<span>]</span></span>
+							<a href="javascript:;">瀚茶缘（雍和宫店）</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>美食<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>美食<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+						<li>
+							<span class="type"><span>[</span>购物<span>]</span></span>
+							<a href="javascript:;">老北京一尊皇牛</a>
+						</li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+		<!------------------------------------------------ footer ---------------------------------------------->
+		<footer class="border">
+			<div class="wrap clear">
+				<span>关于我们</span>
+				<span>|</span>
+				<span>联系我们</span>
+				<span>|</span>
+				<span>版权声明</span>
+				<span>|</span>
+				<span>加入我们</span>
+				<span>|</span>
+				<span>问题反馈</span>
+				<span>|</span>
+				<span>友情链接</span>
+				<span>|</span>
+				<span>网站地图</span>
+				<span>|</span>
+				<span>视频索引</span>
+				<p>Copyright &copy; 2017 www.100du.com 100度享乐网 版权所有 京ICP证070374号</p>
+			</div>
+		</footer>
+		
+		<!------------------------------------------------ scripts ---------------------------------------------->
+		<!-- build:js js/framework/jquery.min.js -->
+		<script src="js/framework/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<!-- build:js js/framework/angular.min.js -->
+		<script src="js/framework/angular.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+		<!-- build:js js/app.min.js -->
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controllers.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/directives.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/services.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/filters.js" type="text/javascript" charset="utf-8"></script>
+		<!-- endbuild -->
+	</body>
+</html>

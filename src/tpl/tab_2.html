@@ -1,0 +1,6 @@
+<div ng-transclude></div>
+<nav class="btns">
+	<a href="javascript:;" ng-class="{active: pane.selected, 'color-1': $index == 0, 'color-2': $index == 1, 'color-3': $index == 2, 'color-4': $index == 3, 'color-5': $index == 4,}" ng-repeat="pane in panes" ng-click="select(pane)">
+		<strong>{{pane.title}}</strong>号线
+	</a>
+</nav>
